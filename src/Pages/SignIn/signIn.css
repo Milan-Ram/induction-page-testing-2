@@ -1,0 +1,13 @@
+.signIn-page-wrapper {
+    min-height: 90vh !important;
+}
+.signIn-page-wrapper form{
+    display: flex;
+    gap: 0.8rem;
+    flex-direction: column;
+    justify-content: center;
+}
+.signIn-page-wrapper form h2{
+    font-size: 2.3rem;
+    margin-bottom: 4rem;
+}
