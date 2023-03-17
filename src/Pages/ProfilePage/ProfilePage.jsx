@@ -57,9 +57,15 @@ const ProfilePage = () => {
       <div className="user-profile-page">
         <div className="header-container">
           <div className="header-wrapper d-flex">
-            <div onClick={Logout} className='logout'>Logout</div>
+            {/* <div onClick={Logout} className='logout'>Logout</div> */}
+           
+            {/* <div><p>Hello,{studentData.name} </p></div>  */}
+
             <div> <h2>IDEA INNOVATION CELL</h2></div>
-            <div><p>Hello,{studentData.name} </p></div>
+            <div className='d-flex hello-user-wrapper'>
+              <p>Hello, {studentData.name} </p>
+              <button onClick={Logout} className='logout-btn'>Logout</button>
+            </div>
           </div>
         </div >
         {/* //////////// */}

@@ -1,56 +1,111 @@
 .user-profile-page {
     padding-bottom: 3rem;
-}
-
-.header-container {
+  }
+  .header-container {
     padding: 1rem 4rem;
     margin-bottom: 2rem;
-}
-
-.header-wrapper {
+  }
+  .header-wrapper {
     padding: 1rem 0;
     justify-content: space-between;
     border-bottom: 1px solid #fff;
-}
-
-.header-wrapper h2 {
+  }
+  .header-wrapper h2 {
     font-size: 1.5rem;
-}
-
-.user-profile, .user-result {
+  }
+  .header-wrapper .logout-btn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 0.4rem;
+    margin-left: 2rem;
+    color: #000;
+    background-color: #fff;
+  }
+  .user-profile,
+  .user-result {
     display: grid;
     width: 75%;
     padding: 2rem 4rem;
     gap: 0.8rem;
-    margin: 1rem 4rem;
     margin: 0 auto;
-    background-color: #ffffff14;
-}
-
-.flex-col-2 {
+    background-color: #ffffff22;
+  }
+  .user-profile h4 {
+    margin-top: 1rem;
+  }
+  .flex-col-2 {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
     border-bottom: 1px solid #cccccc3b;
     grid-template-columns: 1fr 3fr;
-}
-
-.user-result .grid-col-3 {
+  }
+  .user-result .grid-col-3 {
     display: grid;
     grid-template-columns: 1.5fr 2fr 2fr 1fr;
     padding: 1rem 0;
     border-bottom: 1px solid #cccccc3b;
-}
-
-.user-result .test-link {
+  }
+  .user-result .test-link {
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: 0.4rem;
     padding: 0.6rem 1.2rem;
     color: #000;
     background-color: aquamarine;
-}
-
-.logout:hover {
-    cursor: pointer;
-}
+  }
+  @media screen and (max-width: 1200px) {
+    .user-profile,
+    .user-result {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .user-profile,
+    .user-result {
+      width: 90%;
+    }
+    .user-result .grid-col-3 {
+      grid-template-columns: 1fr 2fr 1.3fr 1fr;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .user-profile-page {
+      padding-bottom: 3rem;
+    }
+    .header-container {
+      padding: 1rem;
+    }
+    .header-wrapper {
+      padding: 1rem 0;
+    }
+    .header-wrapper h2 {
+      font-size: 1.2rem;
+    }
+    .hello-user-wrapper {
+      flex-direction: column;
+      align-items: self-end;
+      gap: 0.4rem;
+    }
+    .header-wrapper .logout-btn {
+      position: absolute;
+      top: 5.3rem;
+      font-size: 0.85rem;
+    }
+    .user-profile h3,
+    .user-result h3 {
+      font-size: 1.2rem;
+    }
+    .user-profile,
+    .user-result {
+      width: 90%;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+    .user-result .grid-col-3 {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  

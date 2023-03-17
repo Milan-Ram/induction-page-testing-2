@@ -5,7 +5,33 @@ import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
+// ****************************************************************************************
+import { useForm } from 'react-hook-form'
+import { object, string } from 'yup'
+import { yupResolver } from '@hookform/resolvers/yup'
+// ****************************************************************************************
+
 const SignIn = () => {
+
+
+  const validationSchema = object().shape({
+    email: string().required('Email is required').email('Invalid email address'),
+    regdno: string()
+      .required('Registration number is required')
+      .min(10, 'Enter valid registration number'),
+    
+  })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+  })
+  // ****************************************************************************************
+
+
+
   const navigate = useNavigate();
   const [dom1, setDom1] = useState("");
   const [dom2, setDom2] = useState("");
@@ -44,7 +70,7 @@ const SignIn = () => {
     window.localStorage.setItem("userToken", userToken);
     console.log(data.message);
     alert(`${data.message}`);
-    if (data.status == 201) {
+    if (data.status === 201) {
       console.log("yes");
       navigate('/ProfilePage');
     }
@@ -57,24 +83,26 @@ const SignIn = () => {
           <div className="signUp-page-img">
             <img src={astronaut} alt="" />
           </div>
-          <form className="signUp-form">
+          <form onSubmit={handleSubmit(postLogin)} className="signUp-form">
             <h2>Idea Innovation Cell</h2>
 
             <div>
               <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" value={user.email} placeholder="Enter your Email" autoComplete="off" onChange={handleInput} />
-              {/* {<p className="error-message">{errors.email}</p>} */}
+              <input type="email" {...register('email')}  name="email" id="email" value={user.email} placeholder="Enter your Email" autoComplete="off" onChange={handleInput} />
+              {errors.email && <p className="error-message">{errors.email.message}</p>}
             </div>
             <div>
               <label htmlFor="phone">Registration No</label>
-              <input type="number" name="regdno" value={user.regdno} id="phone" placeholder="Registration no" onChange={handleInput} />
+              <input type="number" {...register('regdno')} name="regdno" value={user.regdno} id="phone" placeholder="Registration no" onChange={handleInput} />
 
-              {/* {<p className="error-message">{errors.phone}</p>} */}
+              {errors.regdno && (
+            <p className="error-message">{errors.regdno.message}</p>
+          )}
             </div>
 
             <div className="bottom-container grid-two-col">
               <p>Not Registered ? <Link to="/" className="signIn-text">Sign Up</Link></p>
-              <input className="sign-up-btn" type="submit" value="Sign In" onClick={postLogin} />
+              <input className="sign-up-btn" type="submit" value="Sign In" />
             </div>
           </form>
         </div>

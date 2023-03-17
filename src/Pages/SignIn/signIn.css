@@ -11,3 +11,44 @@
     font-size: 2.3rem;
     margin-bottom: 4rem;
 }
+@media screen and (max-width: 1200px) {
+    :root {
+      font-size: 86%;
+    }
+    .signIn-page-wrapper {
+        min-height: 90.5vh !important;
+    }
+    .signIn-page-wrapper form{
+        padding: 1rem 5rem;
+    }
+    .signIn-page-wrapper form input{ 
+        padding: 1rem ;
+    }
+    .signIn-page-wrapper form label{ 
+        font-size: 0.9rem ;
+    }
+}
+@media screen and (max-width: 1000px) {
+    form {
+      padding: 2rem !important;
+    }
+    form h2{
+        margin:1rem -2rem 2rem !important;
+    }
+  }
+@media screen and (max-width: 500px) {
+
+    .signIn-page-wrapper {
+        min-height: fit-content !important;
+    }
+
+    .signIn-page-wrapper form h2{
+        font-size: 1.8rem;
+        width: 100vw;
+        margin-left: -3.5rem;
+
+    }
+    .signIn-page-wrapper form{
+        padding:3rem;
+    }
+}

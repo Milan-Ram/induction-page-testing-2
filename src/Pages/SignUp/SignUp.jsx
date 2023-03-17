@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 // ****************************************************************************************
 import { useForm } from 'react-hook-form'
-import { number, object, string } from 'yup'
+import { object, string } from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 // ****************************************************************************************
 // const initialValues = {
@@ -34,12 +34,12 @@ const SignUp = () => {
       .required('Username is required')
       .min(3, 'Username must be at least 3 characters'),
     email: string().required('Email is required').email('Invalid email address'),
-    contact: number()
+    contact: string()
       .required('Phone number is required')
       .min(10, 'Enter valid contact number'),
     branch: string()
       .required('Enter your branch'),
-    regdno: number()
+    regdno: string()
       .required('Registration number is required')
       .min(10, 'Enter valid registration number'),
       select:string()

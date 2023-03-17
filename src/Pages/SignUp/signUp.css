@@ -2,6 +2,7 @@
     width: 100vw;
     min-height: 100vh;
     background-color: rgb(1, 9, 36);
+    background: url(../../Images/space.jpg)  no-repeat;
     overflow-x: hidden;
     overflow-y: visible;
   }
@@ -23,7 +24,8 @@
   form h2 {
     font-size: 1.8rem;
     text-align: center;
-    color: #ffffffef;
+    color: #ffffffe1;
+    text-transform: uppercase;
   }
   .signUp-page-img img {
     width: 100%;
@@ -86,6 +88,7 @@
     grid-template-columns: 4fr 1fr;
     align-items: flex-end;
     font-size: 0.89rem;
+    margin-top: 0.5rem;
   }
   .bottom-container .signIn-text {
     font-weight: 600;
@@ -113,30 +116,32 @@
     form input,
     select {
       width: 100%;
-      padding: 0.7rem;
+      padding: 0.8rem;
     }
   }
   @media screen and (max-width: 1000px) {
     form {
-      padding: 01rem 1.4rem;
+      padding:0rem 01rem 0.35rem !important;
     }
   }
   @media screen and (max-width: 500px) {
+
     .signUp-page-wrapper {
-      width: 98%;
-      min-height: 95vh;
-      display: flex;
+        width: 98%;
+        min-height: 95vh;
+        display: flex;
+        background: url(../../Images/space.jpg)  no-repeat;
       flex-direction: column;
-      margin: 2rem 01rem;
+      margin: 2rem 0.7rem;
     }
     form {
-      padding: 1rem 3rem;
+      padding:  1.5rem;
     }
     .signUp-page-img img {
       display: none;
     }
     form label {
-      font-size: 0.9rem;
+      font-size: 0.91rem;
       margin: 1rem 0 0.3rem;
     }
     form input,
@@ -165,7 +170,7 @@
     .bottom-container {
       display: flex;
       flex-direction: column-reverse;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
     }
     .error-message {
       font-size: 0.8rem;
